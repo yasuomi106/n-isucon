@@ -1,0 +1,13 @@
+[Unit]
+Description=Niita App by node
+After=mysql.service
+
+[Service]
+User=isucon
+Type=simple
+EnvironmentFile=/home/isucon/.env
+WorkingDirectory=/home/isucon/app/node
+ExecStart=/usr/local/bin/node app.js
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Niita App by go
+After=mysql.service
+
+[Service]
+User=isucon
+Type=simple
+EnvironmentFile=/home/isucon/.env
+WorkingDirectory=/home/isucon/app/go
+ExecStart=/usr/bin/go run app.go structure.go db_utility.go
+
+[Install]
+WantedBy=multi-user.target

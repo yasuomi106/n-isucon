@@ -1,0 +1,13 @@
+[Unit]
+Description=Niita App by python
+After=mysql.service
+
+[Service]
+User=isucon
+Type=simple
+EnvironmentFile=/home/isucon/.env
+WorkingDirectory=/home/isucon/app/python
+ExecStart=/usr/bin/python3.7 ./app.py
+
+[Install]
+WantedBy=multi-user.target

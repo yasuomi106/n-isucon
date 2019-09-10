@@ -1,0 +1,13 @@
+[Unit]
+Description=Niita App by ruby
+After=mysql.service
+
+[Service]
+User=isucon
+Type=simple
+EnvironmentFile=/home/isucon/.env
+WorkingDirectory=/home/isucon/app/ruby
+ExecStart=/usr/local/bin/bundle exec rackup -p 5000
+
+[Install]
+WantedBy=multi-user.target
